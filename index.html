@@ -12,6 +12,7 @@
             --primary: #0f172a;
             --accent: #2563eb;
             --success: #10b981;
+            --warning: #f59e0b;
             --card-bg: #ffffff;
         }
         body {
@@ -33,6 +34,7 @@
             padding: 40px 20px;
             text-align: center;
             border-radius: 0 0 16px 16px;
+            position: relative;
         }
         header h1 {
             margin: 0;
@@ -43,6 +45,21 @@
             margin: 10px 0 0;
             font-size: 16px;
             opacity: 0.9;
+        }
+        .launch-badge {
+            display: inline-block;
+            background: var(--warning);
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
         .card {
             background: var(--card-bg);
@@ -66,6 +83,13 @@
             border-radius: 6px;
             margin: 16px 0;
         }
+        .warning-box {
+            background: #fffbeb;
+            border-left: 4px solid var(--warning);
+            padding: 16px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -77,6 +101,10 @@
             padding: 16px;
             background: #f1f5f9;
             border-radius: 8px;
+            position: relative;
+        }
+        .stat-item.special {
+            background: #fef3c7;
         }
         .stat-value {
             font-size: 24px;
@@ -84,9 +112,23 @@
             color: var(--accent);
             display: block;
         }
+        .stat-item.special .stat-value {
+            color: #d97706;
+        }
         .stat-label {
             font-size: 14px;
             color: #64748b;
+        }
+        .temp-badge {
+            display: inline-block;
+            background: var(--warning);
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 600;
+            margin-left: 5px;
+            vertical-align: middle;
         }
         ul {
             padding-left: 20px;
@@ -131,6 +173,21 @@
         .btn-secondary:hover {
             background: #059669;
         }
+        .btn-community {
+            background: #8b5cf6;
+            display: inline-block;
+            text-align: center;
+            padding: 12px 24px;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .btn-community:hover {
+            background: #7c3aed;
+            text-decoration: none;
+        }
         .note {
             font-size: 14px;
             color: #64748b;
@@ -143,6 +200,13 @@
             font-size: 13px;
             border-top: 1px solid #e2e8f0;
             margin-top: 40px;
+        }
+        .community-block {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-top: 24px;
         }
         @media (min-width: 600px) {
             .btn-group {
@@ -157,6 +221,7 @@
 <body>
 
 <header>
+    <span class="launch-badge">🔥 СТАРТОВАЯ АКЦИЯ</span>
     <h1>Delta Go</h1>
     <p>Надежный инструмент пассивного дохода с ежедневными выплатами</p>
 </header>
@@ -164,10 +229,21 @@
 <div class="container">
 
     <div class="card">
+        <h2>Успейте зафиксировать повышенную ставку</h2>
+        <div class="warning-box">
+            <strong>⚠️ Важно для инвесторов:</strong> Платформа сейчас находится в стадии активного запуска. Чтобы привлечь первых участников, администрация временно установила максимальную доходность — <strong>8% в день</strong>.
+            <br><br>
+            По мере роста проекта и увеличения объема пула ставка будет поэтапно снижена до плановых 5-6% в день. Это стандартная и здоровая практика для долгосрочных проектов, которая гарантирует устойчивость платформы.
+            <br><br>
+            <strong>Что это значит для вас:</strong> Те, кто регистрируется и открывает депозит сейчас, фиксируют за собой максимальную доходность на весь срок действия контракта (25 дней). Не упустите возможность зайти на самых выгодных условиях!
+        </div>
+    </div>
+
+    <div class="card">
         <h2>Основные условия работы</h2>
         <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-value">8%</span>
+            <div class="stat-item special">
+                <span class="stat-value">8%<span class="temp-badge">ВРЕМЕННО</span></span>
                 <span class="stat-label">в день</span>
             </div>
             <div class="stat-item">
@@ -244,6 +320,12 @@
             <li><strong>Доступ к платформе:</strong> В некоторых регионах или у отдельных интернет-провайдеров сайт может быть временно недоступен. Для стабильного и бесперебойного доступа рекомендуем использовать любой надежный VPN-сервис.</li>
             <li><strong>Сеть переводов:</strong> Всегда внимательно выбирайте сеть BEP-20 (BSC) при выводе и вводе средств, чтобы избежать потери транзакций.</li>
         </ul>
+    </div>
+
+    <div class="community-block">
+        <h2>Присоединяйтесь к сообществу</h2>
+        <p>В нашей закрытой группе вы найдете живые отзывы участников, скриншоты выплат и сможете задать любые вопросы опытным инвесторам. Помогаем новичкам разобраться с первыми шагами.</p>
+        <a href="https://t.me/+ivgcWRjVJPgzYzMy" class="btn-community" target="_blank">💬 Вступить в группу инвесторов</a>
     </div>
 
 </div>
