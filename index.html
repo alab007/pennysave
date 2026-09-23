@@ -34,7 +34,6 @@
             padding: 40px 20px;
             text-align: center;
             border-radius: 0 0 16px 16px;
-            position: relative;
         }
         header h1 {
             margin: 0;
@@ -45,21 +44,6 @@
             margin: 10px 0 0;
             font-size: 16px;
             opacity: 0.9;
-        }
-        .launch-badge {
-            display: inline-block;
-            background: var(--warning);
-            color: #ffffff;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
         }
         .card {
             background: var(--card-bg);
@@ -83,12 +67,13 @@
             border-radius: 6px;
             margin: 16px 0;
         }
-        .warning-box {
-            background: #fffbeb;
+        .urgency-box {
+            background: #fef3c7;
             border-left: 4px solid var(--warning);
             padding: 16px;
             border-radius: 6px;
             margin: 16px 0;
+            font-weight: 500;
         }
         .stats-grid {
             display: grid;
@@ -101,10 +86,6 @@
             padding: 16px;
             background: #f1f5f9;
             border-radius: 8px;
-            position: relative;
-        }
-        .stat-item.special {
-            background: #fef3c7;
         }
         .stat-value {
             font-size: 24px;
@@ -112,23 +93,9 @@
             color: var(--accent);
             display: block;
         }
-        .stat-item.special .stat-value {
-            color: #d97706;
-        }
         .stat-label {
             font-size: 14px;
             color: #64748b;
-        }
-        .temp-badge {
-            display: inline-block;
-            background: var(--warning);
-            color: #ffffff;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 10px;
-            font-weight: 600;
-            margin-left: 5px;
-            vertical-align: middle;
         }
         ul {
             padding-left: 20px;
@@ -173,25 +140,67 @@
         .btn-secondary:hover {
             background: #059669;
         }
-        .btn-community {
-            background: #8b5cf6;
-            display: inline-block;
-            text-align: center;
-            padding: 12px 24px;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            margin-top: 10px;
+        .btn-group {
+            background: #f8fafc;
         }
-        .btn-community:hover {
-            background: #7c3aed;
+        .btn-group:hover {
+            background: #ecfdf5;
             text-decoration: none;
         }
         .note {
             font-size: 14px;
             color: #64748b;
             margin-top: 10px;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .community-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid var(--accent);
+        }
+        .community-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        .community-box p {
+            margin: 10px 0;
+        }
+        .giveaway-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid var(--warning);
+        }
+        .giveaway-box h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        .giveaway-box .prize {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--warning);
+            margin: 10px 0;
         }
         footer {
             text-align: center;
@@ -200,13 +209,6 @@
             font-size: 13px;
             border-top: 1px solid #e2e8f0;
             margin-top: 40px;
-        }
-        .community-block {
-            text-align: center;
-            padding: 30px 20px;
-            background: var(--card-bg);
-            border-radius: 12px;
-            margin-top: 24px;
         }
         @media (min-width: 600px) {
             .btn-group {
@@ -221,7 +223,6 @@
 <body>
 
 <header>
-    <span class="launch-badge">🔥 СТАРТОВАЯ АКЦИЯ</span>
     <h1>Delta Go</h1>
     <p>Надежный инструмент пассивного дохода с ежедневными выплатами</p>
 </header>
@@ -229,22 +230,11 @@
 <div class="container">
 
     <div class="card">
-        <h2>Успейте зафиксировать повышенную ставку</h2>
-        <div class="warning-box">
-            <strong>⚠️ Важно для инвесторов:</strong> Платформа сейчас находится в стадии активного запуска. Чтобы привлечь первых участников, администрация временно установила максимальную доходность — <strong>8% в день</strong>.
-            <br><br>
-            По мере роста проекта и увеличения объема пула ставка будет поэтапно снижена до плановых 5-6% в день. Это стандартная и здоровая практика для долгосрочных проектов, которая гарантирует устойчивость платформы.
-            <br><br>
-            <strong>Что это значит для вас:</strong> Те, кто регистрируется и открывает депозит сейчас, фиксируют за собой максимальную доходность на весь срок действия контракта (25 дней). Не упустите возможность зайти на самых выгодных условиях!
-        </div>
-    </div>
-
-    <div class="card">
         <h2>Основные условия работы</h2>
         <div class="stats-grid">
-            <div class="stat-item special">
-                <span class="stat-value">8%<span class="temp-badge">ВРЕМЕННО</span></span>
-                <span class="stat-label">в день</span>
+            <div class="stat-item">
+                <span class="stat-value">8%</span>
+                <span class="stat-label">в день (сейчас)</span>
             </div>
             <div class="stat-item">
                 <span class="stat-value">25 дней</span>
@@ -259,16 +249,35 @@
                 <span class="stat-label">сеть переводов</span>
             </div>
         </div>
+        
+        <div class="urgency-box">
+            <strong>⏳ Успейте зайти по максимальной ставке!</strong><br>
+            Сейчас действует стартовая доходность <strong>8% в день</strong>. По мере роста проекта ставка будет скорректирована до 5–6% в день. Это признак стабильности и устойчивого развития платформы, а не её угасания. Открывайте депозит сейчас — и получайте максимальную прибыль весь срок 25 дней по текущей высокой ставке.
+        </div>
+
         <div class="highlight-box">
             <strong>Главное преимущество:</strong> Проценты начисляются и приходят сразу на ваш личный внешний кошелек каждые 24 часа, а не копятся внутри платформы.
         </div>
     </div>
 
     <div class="card">
+        <h2>Презентация проекта</h2>
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/Zp0NFEi5o5c" 
+                title="Delta Go - Презентация проекта" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p style="text-align: center; color: #64748b; font-size: 14px;">Посмотрите видео, чтобы узнать больше о возможностях платформы</p>
+    </div>
+
+    <div class="card">
         <h2>Маркетинг план</h2>
         <ul>
             <li>Открытие депозита от 10 USDT на 25 дней.</li>
-            <li>Ежедневное автоматическое начисление 8% от вложенной суммы на ваш кошелек.</li>
+            <li>Ежедневное автоматическое начисление 8% от вложенной суммы на ваш кошелек (пока действует стартовая ставка).</li>
             <li>Итоговая чистая прибыль за 25 дней составляет 200% к телу депозита.</li>
             <li>Вывод средств происходит ежедневно автоматически вместе с начислением. Высокие минимальные пороги для вывода отсутствуют, вы получаете свои проценты каждый день без задержек.</li>
         </ul>
@@ -322,10 +331,17 @@
         </ul>
     </div>
 
-    <div class="community-block">
-        <h2>Присоединяйтесь к сообществу</h2>
-        <p>В нашей закрытой группе вы найдете живые отзывы участников, скриншоты выплат и сможете задать любые вопросы опытным инвесторам. Помогаем новичкам разобраться с первыми шагами.</p>
-        <a href="https://t.me/+ivgcWRjVJPgzYzMy" class="btn-community" target="_blank">💬 Вступить в группу инвесторов</a>
+    <div class="giveaway-box">
+        <h3>🎁 Ежедневные конкурсы и розыгрыши</h3>
+        <p>В официальном сообществе проекта каждый день проводятся конкурсы и розыгрыши призов!</p>
+        <div class="prize">$5-10 USDT</div>
+        <p>Выиграйте дополнительные средства просто за активность.</p>
+    </div>
+
+    <div class="community-box">
+        <h3>💬 Присоединяйтесь к нашему сообществу</h3>
+        <p>Делитесь опытом, задавайте вопросы и получайте поддержку. Вместе проще достигать результатов.</p>
+        <p><a href="https://t.me/+ivgcWRjVJPgzYzMy" target="_blank">Вступайте в нашу группу Telegram →</a></p>
     </div>
 
 </div>
